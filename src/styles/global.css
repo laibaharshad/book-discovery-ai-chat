@@ -1,0 +1,232 @@
+:root {
+  font-family: system-ui, Arial, sans-serif;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f7f8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #1a1a2e;
+  color: #fff;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.search-button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background: #2e2e4d;
+}
+
+.favorite-button {
+  margin-top: 0.75rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #1a1a2e;
+  border-radius: 6px;
+  background: #fff;
+  color: #1a1a2e;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.favorite-button:hover {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+.status {
+  margin: 1rem 0;
+  color: #555;
+}
+
+.status.error {
+  color: #c0392b;
+}
+
+.book-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.25rem;
+}
+
+.book-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.book-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.book-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #eee;
+}
+
+.book-cover.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.book-title {
+  font-size: 0.95rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.book-author {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+}
+
+.book-year {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0.25rem 0 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #1a1a2e;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.details-card {
+  display: flex;
+  gap: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.details-cover {
+  width: 200px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.details-cover.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.details-info {
+  flex: 1;
+}
+
+.details-info h1 {
+  margin: 0 0 0.5rem;
+}
+
+.details-authors {
+  color: #555;
+  margin: 0 0 0.5rem;
+}
+
+.details-pub {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.details-description h2,
+.details-subjects h2 {
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.details-subjects ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .details-card {
+    flex-direction: column;
+    align-items: center;
+  }
+}
