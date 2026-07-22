@@ -60,5 +60,5 @@ The application is complete and demonstrates an AI-assisted React development wo
 
 ## Documentation
 
-See PROMPTS.md for the prompts used during the AI-assisted development process.
+See [PROMPTS.md](PROMPTS.md) for the prompts used during the AI-assisted development process.
 
