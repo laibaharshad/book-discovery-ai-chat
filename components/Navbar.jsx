@@ -15,6 +15,12 @@ export default function Navbar() {
           <Link href="/favorites" className="text-sm font-medium text-secondary transition-colors hover:text-primary">
             Favorites
           </Link>
+          <Link
+            href="/health"
+            className="text-sm font-medium text-secondary transition-colors hover:text-primary"
+          >
+            Health
+          </Link>
         </div>
       </div>
     </nav>

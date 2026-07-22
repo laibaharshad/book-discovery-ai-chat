@@ -2,6 +2,10 @@
 
 A Next.js application for discovering books using the Open Library API. Search for books, view details, and save favorites.
 
+## Live Demo
+
+[Book Discovery](https://book-discovery-app-nextjs.vercel.app/)
+
 ## Features
 
 - Search books via the Open Library API
