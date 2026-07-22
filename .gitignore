@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Env files — dotenv loads .env by default; never commit secrets
+.env
+.env*.local
+
+# Next.js build output
+.next
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
