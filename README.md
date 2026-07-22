@@ -1,64 +1,105 @@
 # Book Discovery
 
-A React application for discovering books using the Open Library API. Users can search for books, view detailed information, and save their favorite books for later.
+A Next.js application for discovering books using the Open Library API. Search for books, view details, and save favorites.
 
 ## Features
 
-* Search for books using the Open Library API
-* View detailed information about individual books
-* Display book covers, authors, descriptions, subjects, and publication information
-* Add and remove books from favorites
-* Persist favorites using `localStorage`
-* View all saved books on a dedicated Favorites page
-* Display the current favorites count in the navigation
-* Responsive user interface
-* Loading, error, and empty states
-* Client-side navigation using React Router
+- Search books via the Open Library API
+- View book details (covers, authors, description, subjects, publication info)
+- Add/remove favorites, persisted via browser `localStorage`
+- Dedicated Favorites page
+- Responsive UI with loading, error, and empty states
+- Health-check page for API connectivity
 
-## Technology Stack
+## Tech Stack
 
-* React
-* Vite
-* JavaScript
-* React Router
-* Open Library API
-* React Context
-* Browser `localStorage`
+Next.js 16 · React 19 · JavaScript · App Router · Tailwind CSS · Open Library API · `localStorage`
 
-## How AI Helped
+## Routes
 
-AI acted as a development assistant throughout this project. It helped me plan the application incrementally, suggested a modular React structure, generated code for individual milestones, explained implementation decisions, assisted with Open Library API integration, React Context, localStorage persistence, routing, and debugging. I reviewed each milestone, approved changes before moving forward, and verified the final application through linting, production builds, and manual testing.
+| Route | Purpose |
+|---|---|
+| `/` | Search and browse books |
+| `/books/[id]` | View book details |
+| `/favorites` | View/remove saved favorites |
+| `/health` | Check API connectivity |
 
-## Manual Improvements and Corrections
+## Architecture
 
-* I reviewed AI-generated code after every milestone before approving it.
-* I inspected real Open Library API responses instead of relying on assumptions about the data structure.
-* I verified that API logic, custom hooks, components, pages, and shared state had separate responsibilities.
-* I corrected the provider wiring so the application renders once inside `FavoritesProvider`.
-* I verified that favorite-button clicks do not accidentally navigate to the book details page.
-* I reused `BookCard` on both the Home and Favorites pages instead of duplicating the UI.
-* I ran `npm run lint` and `npm run build`.
-* I manually tested searching, book details, favorites, localStorage persistence, navigation, and loading, error, and empty states.
-* I manually added a favorites count display in the Navbar, since it was not covered by the original prompts.
+- **Server Components** — data fetching: `app/page.js`, `app/books/[id]/page.js`, `app/health/page.js`
+- **Client Components** — interactivity: `SearchForm.jsx`, `BookCard.jsx`, `FavoriteButton.jsx`, `app/favorites/page.js`
+- **Data layer** — `lib/books.js` handles search, normalization, detail fetching, author resolution, and cover URLs
 
 ## Project Structure
 
-The project separates responsibilities between API communication, React state, shared application state, reusable components, and pages.
+```text
+app/
+├── books/[id]/page.js
+├── favorites/page.js
+├── health/page.js
+├── globals.css
+├── layout.js
+└── page.js
 
-The main areas include:
+components/
+├── BookCard.jsx
+├── FavoriteButton.jsx
+├── Navbar.jsx
+└── SearchForm.jsx
 
-* API services for communicating with Open Library
-* Custom hooks for asynchronous data and React state
-* Context for shared favorites state
-* Reusable components such as `BookCard`
-* Pages for the main application views
-* React Router for navigation
+lib/
+└── books.js
+```
+
+postcss.config.js
+tailwind.config.js
+package.json
+
+## Design System
+
+**Colors:** `primary` #0F172A · `secondary` #334155 · `background` #F8FAFC · `accent` #06B6D4
+
+**Typography:** Space Grotesk (headings), Source Sans 3 (body)
+
+## Running Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Production Build
+
+```bash
+npm run build
+npm start
+```
+
+## Verification
+
+`npm run build` and `npm run lint` both pass with no errors. Manually tested: search, loading/error/empty states, book details, invalid IDs, favorites add/remove/persistence, navigation, and responsive layouts.
+
+## API
+
+Uses the public Open Library API (Search, Works, Authors, Covers) — no API key required.
+
+## How AI Helped
+
+AI assisted with planning the Vite → Next.js migration, App Router structure, architecture decisions, incremental feature implementation, API integration, responsive design, debugging, and code/build verification. All output was reviewed, tested, and validated before being accepted — AI was used as a coding partner, not a replacement for review.
+
+## Manual Improvements and Corrections
+
+- Reviewed and backed up the original Vite project before migrating
+- Migrated to Next.js with the App Router
+- Separated API/data logic into `lib/books.js`
+- Applied Server/Client Component boundaries appropriately
+- Added Tailwind design tokens, responsive layouts, and loading/error/empty states
+- Verified real API responses, valid/invalid routes, and `localStorage` persistence
+- Ran successful production builds and lint checks
 
 ## Project Status
 
-The application is complete and demonstrates an AI-assisted React development workflow focused on incremental implementation, code review, debugging, testing, and refinement.
-
-## Documentation
-
-See [PROMPTS.md](PROMPTS.md) for the prompts used during the AI-assisted development process.
+Complete and ready for deployment.
 
