@@ -148,5 +148,5 @@ AI assisted with planning the Vite → Next.js migration, App Router structure, 
 
 ## Project Status
 
-Deployed and ready for submission
+Complete and deployed on Vercel.
 
