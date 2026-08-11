@@ -139,9 +139,9 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .chat {
-    height: 360px;
+    height: 200px;
   }
 
   .messages {
