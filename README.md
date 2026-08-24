@@ -4,7 +4,7 @@ A Next.js application for discovering books using the Open Library API. Search f
 
 ## Live Demo
 
-[Book Discovery](https://book-discovery-app-nextjs-mjlex7iqt-laiba-arshad.vercel.app/)
+[Book Discovery — AI Chat](https://book-discovery-ai-chat.vercel.app/)
 
 ## Features
 
